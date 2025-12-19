@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
 
 function Messages() {
   const navigate = useNavigate();
+  const containerRef = useRef(null);
 
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,15 +16,11 @@ function Messages() {
         const response = await fetch(
           "https://portfolio-mission.onrender.com/api/contact"
         );
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch messages");
-        }
-
+        if (!response.ok) throw new Error();
         const data = await response.json();
         setMessages(data);
-      } catch (err) {
-        setError("Unable to load messages. Please try again later.");
+      } catch {
+        setError("Unable to load messages.");
       } finally {
         setLoading(false);
       }
@@ -31,41 +29,51 @@ function Messages() {
     fetchMessages();
   }, []);
 
+  // ✅ GSAP – CORRECT & CLEAN
+  useEffect(() => {
+    if (!messages.length) return;
+
+    const ctx = gsap.context(() => {
+  gsap.from(".message-card", {
+    y: 40,
+    opacity: 0,
+    duration: 0.7,
+    stagger: 0.15,
+    ease: "power3.out",
+    clearProps: "all",
+  });
+}, containerRef);
+
+return () => ctx.revert();
+ // 🔥 CLEANUP
+  }, [messages]);
+
   return (
-    <main style={{ padding: "80px 60px" }}>
-      <button onClick={() => navigate("/")}>
+    <main className="messages-page">
+      <button className="back-btn" onClick={() => navigate("/")}>
         ← Back to Home
       </button>
 
-      <h1 style={{ marginTop: "30px" }}>Messages</h1>
+      <h1 className="messages-title">Messages</h1>
 
       {loading && (
-        <p>Loading messages… (Server may take up to 30 seconds)</p>
+        <p className="messages-status">
+          Loading messages… (Server may take up to 30 seconds)
+        </p>
       )}
 
-      {error && <p>{error}</p>}
+      {error && <p className="messages-status">{error}</p>}
 
-      {!loading && !error && messages.length === 0 && (
-        <p>No messages found.</p>
-      )}
-
-      {!loading && !error && messages.length > 0 && (
-        <div style={{ marginTop: "30px" }}>
+      {!loading && !error && (
+        <div className="messages-container" ref={containerRef}>
           {messages.map((msg) => (
-            <div
-              key={msg._id}
-              style={{
-                border: "1px solid #ddd",
-                padding: "15px",
-                marginBottom: "15px",
-              }}
-            >
+            <div className="message-card" key={msg._id}>
               <h3>{msg.name}</h3>
-              <p><strong>Email:</strong> {msg.email}</p>
-              <p>{msg.message}</p>
-              <small>
+              <p className="email">{msg.email}</p>
+              <p className="message-text">{msg.message}</p>
+              <span className="date">
                 {new Date(msg.createdAt).toLocaleString()}
-              </small>
+              </span>
             </div>
           ))}
         </div>
