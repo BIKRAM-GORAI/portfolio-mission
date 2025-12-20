@@ -1,18 +1,44 @@
 function Education() {
   return (
-    <section id="education" className="education">
-      <h2>Education</h2>
+    <section id="education" className="education-section">
+      <h2 className="education-title">Education</h2>
 
-      <div className="education-item">
-        <h3>Bachelor of Technology (B.Tech)</h3>
-        <p>Computer Science and Engineering</p>
-        <span>2023 – Present</span>
-      </div>
+      <div className="education-timeline">
+        {/* vertical line */}
+        <div className="timeline-line"></div>
 
-      <div className="education-item">
-        <h3>Higher Secondary (12th)</h3>
-        <p>Science Stream</p>
-        <span>Completed</span>
+        {/* Item 1 */}
+        <div className="education-item left">
+          {/* <div className="education-year">2023 – Present</div> */}
+          <div className="education-card">
+            <h3>Bachelor of Technology (B.Tech)</h3>
+            <p>(2024-2028)</p>
+            <p>Computer Science and Engineering</p>
+            <span>XYZ College, ABC University</span>
+          </div>
+        </div>
+
+        {/* Item 2 */}
+        <div className="education-item right">
+          {/* <div className="education-year">2021 – 2023</div> */}
+          <div className="education-card">
+            <h3>Higher Secondary (Class 12)</h3>
+            <p>(2024-2028)</p>
+            <p>Science Stream (CBSE)</p>
+            <span>ABC Higher Secondary School</span>
+          </div>
+        </div>
+
+        {/* Item 3 */}
+        <div className="education-item left">
+          {/* <div className="education-year">2011 – 2021</div> */}
+          <div className="education-card">
+            <h3>Secondary School (Class 1 – 10)</h3>
+            <p>(2024-2028)</p>
+            <p>CBSE Board</p>
+            <span>XYZ School</span>
+          </div>
+        </div>
       </div>
     </section>
   );

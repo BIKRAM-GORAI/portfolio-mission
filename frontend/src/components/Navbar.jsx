@@ -1,7 +1,7 @@
 function Navbar() {
   return (
-    <nav>
-      <ul style={{ display: "flex", gap: "20px", listStyle: "none" }}>
+    <nav className="navbar">
+      <ul className="nav-list">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>

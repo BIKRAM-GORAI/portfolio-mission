@@ -1,0 +1,159 @@
+/* =======================
+   Messages Page Styling
+   ======================= */
+
+.messages-page {
+  padding: 100px 80px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+/* Back button */
+.back-btn {
+  background: rgba(255, 255, 255, 0.6);
+  border: 3px solid #e5e7eb ;
+  padding: 16px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #374151;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease;
+}
+.back-btn:hover {
+  background: #cacad2;
+}
+
+
+
+/* =======================
+   Messages Page Background
+   ======================= */
+
+.messages-page {
+  position: relative;
+  padding: 20px 80px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Background image layer */
+.messages-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/src/assets/messages/bg-messages.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+/* Content layer */
+.messages-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* Title */
+.messages-title {
+  margin-top: 30px;
+  font-size: 50px;
+  font-weight: 800;
+  
+  color: #05453f;
+  display:flex;
+  justify-content: center;
+  
+  
+}
+
+/* Status text */
+.messages-status {
+  margin-top: 20px;
+  font-family: cursive;
+  font-size: 20px;
+  color: #475569;
+  display:flex;
+  justify-content: center;
+}
+
+.dots {
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+/* .view-message-email{
+    color: #c916c0;
+    font-family: cursive;
+    font-size: small; */
+/* } */
+.view-message-name{
+    color: #0d367d;
+    font-family:monospace;
+    font-size: medium;
+}
+/* Cards container */
+.messages-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  
+}
+
+/* Message card */
+.message-card {
+  background: #ffffff;
+  padding: 22px 26px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+/* Card hover */
+.message-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Card content */
+.message-card h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.message-card .view-message-email {
+  font-size: 13px;
+  /* color: #6366f1; */
+  margin-bottom: 12px;
+  color: #c916c0;
+  font-family: cursive;
+  font-size: small;
+}
+
+.message-card .message-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.message-card .view-message-date {
+  font-size: 12px;
+  color: #777974;
+  margin-top: 12px;
+  display: block;
+  padding-left: 82%;
+}

@@ -1,4 +1,6 @@
+import { useRef } from "react";
 function Hero() {
+  const heroRef = useRef(null);
   return (
     <section id="hero" className="hero">
       <div className="hero-left">
@@ -12,7 +14,11 @@ function Hero() {
 
       <div className="hero-right">
         <div className="photo-stack">
-          <p>Photo Stack Animation Area</p>
+          <img src="/src/assets/images/p1.jpg" className="photo-card" />
+          <img src="/src/assets/images/p2.jpg" className="photo-card" />
+          <img src="/src/assets/images/p3.jpg" className="photo-card" />
+          <img src="/src/assets/images/p4.jpg" className="photo-card" />
+          <img src="/src/assets/images/p5.jpg" className="photo-card" />
         </div>
       </div>
     </section>
