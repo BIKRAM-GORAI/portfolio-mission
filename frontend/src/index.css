@@ -21,7 +21,7 @@ body::before {
   /* Layer 1: A black tint (adjust 0.4 for darkness) */
   /* Layer 2: Your image */
   background: linear-gradient(rgba(48, 208, 91, 0.4), rgba(0, 0, 0, 0.4)), 
-              url("src/assets/images/home1.jpg") no-repeat center center;
+              url("/home1.jpg") no-repeat center center;
   
   background-size: cover;
   
