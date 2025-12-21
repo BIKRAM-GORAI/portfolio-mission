@@ -19,7 +19,7 @@ function Education() {
         <div className="education-item right">
           <div className="education-card">
             <h3>Higher Secondary (Class 12)</h3>
-            <p>Valley Public School</p>
+            <p>Valley Public School,Panchet</p>
             <p>(2022-2024)</p>
             <span>Science Stream (CBSE)</span>
           </div>
@@ -28,7 +28,7 @@ function Education() {
         <div className="education-item left">
           <div className="education-card">
             <h3>Secondary School (Class 1 – 10)</h3>
-            <p>Loyola School</p>
+            <p>Loyola School,Taldanga</p>
             <p>(2012-2022)</p>
             <span>ICSE Board</span>
           </div>

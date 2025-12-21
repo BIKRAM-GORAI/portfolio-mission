@@ -18,14 +18,13 @@ body::before {
   width: 100%;
   height: 100%;
   
-  /* Layer 1: A black tint (adjust 0.4 for darkness) */
-  /* Layer 2: Your image */
+
   background: linear-gradient(rgba(48, 208, 91, 0.4), rgba(0, 0, 0, 0.4)), 
-              url("/home1.jpg") no-repeat center center;
+              url("home1.jpg") no-repeat center center;
   
   background-size: cover;
   
-  /* This controls the overall transparency of BOTH the image and the tint */
+  
   opacity: 0.9; 
   z-index: -1;
 }
