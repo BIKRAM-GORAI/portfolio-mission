@@ -48,7 +48,7 @@ function Skills() {
 
   <div className="skill-pill">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" />
-    <span>Git</span>
+    <span>Express</span>
   </div>
 
   <div className="skill-pill">
