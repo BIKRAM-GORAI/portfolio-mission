@@ -91,9 +91,6 @@ function Home() {
       });
     }, document.querySelector(".hero"));
 
-
-
-
     // ABOUT SECTION ANIMATIONS
     // glass box animation
     gsap.to(".about-glass", {
@@ -140,10 +137,29 @@ function Home() {
         start: "top 60%",
       },
     });
+    // PROJECTS SECTION ANIMATIONS
+    gsap.utils.toArray(".project-card").forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          x: index % 2 === 0 ? -1800 : 1800,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 2,
+          ease: "power3.out",
+          immediateRender: false, // 🔑 critical fix
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            once: true, // 🔑 prevents re-running
+          },
+        }
+      );
+    });
 
-
-
-    
     return () => ctx.revert();
   }, []);
 

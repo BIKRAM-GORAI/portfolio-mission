@@ -48,6 +48,16 @@ function Skills() {
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
     <span>Git</span>
   </div>
+
+  <div className="skill-pill">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" />
+    <span>Git</span>
+  </div>
+
+  <div className="skill-pill">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="Github" />
+    <span>Git</span>
+  </div>
 </div>
 }
       
