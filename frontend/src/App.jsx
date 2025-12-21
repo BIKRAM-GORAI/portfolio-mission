@@ -16,7 +16,7 @@ function App() {
         <Route path="/messages" element={<Messages />} />
       </Routes>
 
-      <Footer />
+      {isHomePage && <Footer />}
     </>
   );
 }
