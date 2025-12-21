@@ -7,9 +7,11 @@ import Messages from "./pages/Messages";
 function App() {
   const location = useLocation();
 
+  const isHomePage = location.pathname === "/";
+
   return (
     <>
-      {location.pathname === "/" && <Navbar />}
+      {isHomePage && <Navbar />}
 
       <Routes>
         <Route path="/" element={<Home />} />
