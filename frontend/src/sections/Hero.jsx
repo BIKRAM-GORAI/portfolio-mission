@@ -1,4 +1,5 @@
 import { useRef } from "react";
+
 function Hero() {
   const heroRef = useRef(null);
   return (
@@ -13,11 +14,11 @@ function Hero() {
 
       <div className="hero-right">
         <div className="photo-stack">
-          <img src="/src/assets/images/p1.jpg" className="photo-card" />
-          <img src="/src/assets/images/p2.jpg" className="photo-card" />
-          <img src="/src/assets/images/p3.jpg" className="photo-card" />
-          <img src="/src/assets/images/p4.jpg" className="photo-card" />
-          <img src="/src/assets/images/p5.jpg" className="photo-card" />
+          <img src="/p1.jpg" className="photo-card" />
+          <img src="/p2.jpg" className="photo-card" />
+          <img src="/p3.jpg" className="photo-card" />
+          <img src="/p4.jpg" className="photo-card" />
+          <img src="/p5.jpg" className="photo-card" />
         </div>
       </div>
     </section>

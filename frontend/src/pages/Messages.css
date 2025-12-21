@@ -1,4 +1,5 @@
 
+
 /* Messages Page Styling */
 
 
@@ -42,7 +43,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/src/assets/messages/bg-messages.jpg");
+  background-image: url("/bg-messages.jpg");
   background-size: cover;
   background-position: center;
   opacity: 1;
