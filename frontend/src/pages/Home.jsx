@@ -8,22 +8,27 @@ import "./Home.css";
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
   useEffect(() => {
-    // Pre-warm backend (Render cold start)
-    fetch("https://portfolio-mission.onrender.com/api/contact")
-      .then(() => {
-        // intentionally empty – just waking server
-      })
-      .catch(() => {
-        // ignore errors silently
-      });
+    const wakeServer = async () => {
+      try {
+        await fetch(`${API_BASE_URL}/health`, {
+          method: "GET",
+        });
+      } catch (err) {
+        // silent fail
+      }
+    };
+
+    wakeServer();
   }, []);
 
   useEffect(() => {
-    fetch("https://portfolio-mission.onrender.com/api/contact").catch(() => {});
+    fetch(`${API_BASE_URL}/api/contact`).catch(() => {});
 
     const ctx = gsap.context(() => {
       // HERO TEXT
@@ -64,7 +69,7 @@ function Home() {
         rotation: (i) => -10 + i * 5,
         stagger: 0.5,
         duration: 0.8,
-        //rotation: (i) => (i % 2 === 0 ? -35 : 35),
+        
         ease: "power3.out",
       });
 
@@ -81,7 +86,7 @@ function Home() {
         ease: "power2.in",
       });
 
-      // PHASE D — final card settles (optional micro motion)
+      // PHASE D — final card settles 
       tl.to(lastCard, {
         scale: 1.02,
         duration: 0.3,
@@ -137,6 +142,7 @@ function Home() {
         start: "top 60%",
       },
     });
+
     // PROJECTS SECTION ANIMATIONS
     gsap.utils.toArray(".project-card").forEach((card, index) => {
       gsap.fromTo(
@@ -150,15 +156,37 @@ function Home() {
           x: 0,
           duration: 2,
           ease: "power3.out",
-          immediateRender: false, // 🔑 critical fix
+          immediateRender: false,
           scrollTrigger: {
             trigger: card,
-            start: "top 80%",
-            once: true, // 🔑 prevents re-running
+            start: "top 100%",
+            once: true,
           },
         }
       );
     });
+    
+
+    // CONTACT SECTION ANIMATION
+    gsap.fromTo(
+      ".contact-card",
+      {
+        opacity: 0,
+        y: 300,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2.out",
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 70%",
+          once: true,
+        },
+      }
+    );
 
     return () => ctx.revert();
   }, []);

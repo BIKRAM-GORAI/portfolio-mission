@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import "./Messages.css";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 
 function Messages() {
   const navigate = useNavigate();
@@ -29,7 +31,7 @@ function Messages() {
     const fetchMessages = async () => {
       try {
         const response = await fetch(
-          "https://portfolio-mission.onrender.com/api/contact"
+          `${API_BASE_URL}/api/contact`
         );
         if (!response.ok) throw new Error();
         const data = await response.json();

@@ -1,13 +1,10 @@
 function Skills() {
   return (
     <section id="skills" className="skills-section">
-      {/* Background brand text */}
-      {/* <div className="skills-bg-text">SKILLS</div> */}
 
-      {/* Foreground content */}
       <h2 className="skills-title">Skills</h2>
 
-      {/* Pills container (empty for now) */
+      {/* Pills container  */
       <div className="skills-container">
   <div className="skill-pill">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
@@ -56,7 +53,7 @@ function Skills() {
 
   <div className="skill-pill">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="Github" />
-    <span>Git</span>
+    <span>Github</span>
   </div>
 </div>
 }

@@ -9,7 +9,6 @@ function App() {
 
   return (
     <>
-      {/* Show Navbar only on Home page */}
       {location.pathname === "/" && <Navbar />}
 
       <Routes>

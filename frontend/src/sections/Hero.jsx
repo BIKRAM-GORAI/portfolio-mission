@@ -5,10 +5,9 @@ function Hero() {
     <section id="hero" className="hero">
       <div className="hero-left">
         <h1>Bikram Gorai</h1>
-        <h2>Computer Science Engineering Student</h2>
+        <h2>Aspiring Backend Developer | Mern Stack Learner</h2>
         <p>
-          Aspiring Full Stack Developer focused on backend development and
-          problem solving.
+          I enjoy building real-world web applications, focusing on backend logic, databases, and clean system design.
         </p>
       </div>
 
