@@ -1,35 +1,47 @@
 function Projects() {
   return (
-    <section id="projects" className="projects">
-      <h2>Projects</h2>
+    <section id="projects" className="projects-section">
+      {/* Section Heading */}
+      <h2 className="projects-title">Projects</h2>
 
+      {/* Projects Grid */}
       <div className="projects-grid">
+        {/* Project 1 */}
         <div className="project-card">
-          <h3>School Management System</h3>
-          <p>
-            A full stack web application with separate roles for students,
-            teachers, and admin. Built using Node.js, Express, MongoDB, and
-            HTML/CSS.
+          <h3 className="project-title">School Management System</h3>
+
+          <p className="project-description">
+            A role-based web application for managing students, teachers, and
+            administrators with secure authentication and backend support.
           </p>
-          <span>Tech: Node.js, Express, MongoDB</span>
+
+          <a
+            href="https://github.com/your-username/school-management-system"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            View on GitHub →
+          </a>
         </div>
 
+        {/* Project 2 */}
         <div className="project-card">
-          <h3>To-Do List Application</h3>
-          <p>
-            A task management application with user authentication and date-wise
-            task tracking.
-          </p>
-          <span>Tech: Node.js, MongoDB, EJS</span>
-        </div>
+          <h3 className="project-title">To-Do List Application</h3>
 
-        <div className="project-card">
-          <h3>Portfolio Website</h3>
-          <p>
-            Personal portfolio website built using React with backend integration
-            for contact messages.
+          <p className="project-description">
+            A task management app with user authentication and date-wise task
+            tracking, built to manage daily productivity efficiently.
           </p>
-          <span>Tech: React, Express, MongoDB</span>
+
+          <a
+            href="https://github.com/your-username/todo-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            View on GitHub →
+          </a>
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@ function Contact() {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-    setStatus("Server is starting, please wait (up to 30 seconds)...");
+    setStatus("PLEASE WAIT...");
 
     try {
       const response = await fetch(
