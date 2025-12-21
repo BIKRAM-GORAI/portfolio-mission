@@ -4,6 +4,7 @@ import Education from "../sections/Education";
 import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import Contact from "../sections/Contact";
+import Navbar from "../components/Navbar";
 import "./Home.css";
 import { useEffect } from "react";
 import gsap from "gsap";
@@ -25,6 +26,38 @@ function Home() {
     };
 
     wakeServer();
+  }, []);
+
+  useEffect(() => {
+    fetch(`${API_BASE_URL}/api/contact`).catch(() => {});
+
+    // ✅ GLOBAL: NAVBAR (NO CONTEXT)
+    console.log(document.querySelector(".navbar"));
+
+    gsap.fromTo(
+      ".navbar",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.3,
+      }
+    );
+
+    gsap.fromTo(
+      ".nav-list li",
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.1,
+        delay: 0.5,
+      }
+    );
   }, []);
 
   useEffect(() => {
@@ -69,7 +102,7 @@ function Home() {
         rotation: (i) => -10 + i * 5,
         stagger: 0.5,
         duration: 0.8,
-        
+
         ease: "power3.out",
       });
 
@@ -86,7 +119,7 @@ function Home() {
         ease: "power2.in",
       });
 
-      // PHASE D — final card settles 
+      // PHASE D — final card settles
       tl.to(lastCard, {
         scale: 1.02,
         duration: 0.3,
@@ -165,7 +198,6 @@ function Home() {
         }
       );
     });
-    
 
     // CONTACT SECTION ANIMATION
     gsap.fromTo(
