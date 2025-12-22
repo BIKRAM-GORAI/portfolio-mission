@@ -46,6 +46,8 @@ function Footer() {
             <span>Instagram</span>
           </a>
         </div>
+        <p className="footer-copyright">© 2025 Bikram Gorai. All rights reserved</p>
+
       </div>
     </footer>
   );

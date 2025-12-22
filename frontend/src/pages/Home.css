@@ -830,3 +830,7 @@
   color: #111;
   transform: translateY(-2px);
 }
+.footer-copyright {
+  font-size: 12px;
+  color: #333;
+}
